@@ -16,28 +16,27 @@ class Solution {
         }
         
         // Determine the first element from the right which is less than the next element.
-        int idx = -1;
+        int idx1 = -1;
         for (int i=nums.length-2;i>=0;i--) {
             if (nums[i] < nums[i+1]) {
-                idx = i;
+                idx1 = i;
                 break;
             }
         }
         
         // Swap the element obtained in the previous step with the element just greater than in its right. 
-        int s = -1;
-        int next = Integer.MAX_VALUE;
-        for (int i=idx+1;i<n;i++) {
-            if (nums[idx] < nums[i] && nums[i] < next) {
-                s = i;
-                next = nums[i];
+        int idx2 = -1;
+        for (int i=n-1;i>=0;i--) {
+            if (nums[i] > nums[idx1]) {
+                idx2 = i;
+                break;
             }
         }
         
-        int temp = nums[idx];
-        nums[idx] = nums[s];
-        nums[s] = temp;
+        int temp = nums[idx1];
+        nums[idx1] = nums[idx2];
+        nums[idx2] = temp;
         // Finally sort the array from idx+1
-        Arrays.sort(nums,idx+1,nums.length);
+        Arrays.sort(nums,idx1+1,nums.length);
     }
 }
