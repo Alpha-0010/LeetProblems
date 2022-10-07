@@ -24,7 +24,7 @@ class Solution {
             }
         }
         
-        // Swap the element obtained in the previous step with the element just greater than in its right. 
+        // Determine the element which is greater than nums[idx1] and swap them. 
         int idx2 = -1;
         for (int i=n-1;i>=0;i--) {
             if (nums[i] > nums[idx1]) {
