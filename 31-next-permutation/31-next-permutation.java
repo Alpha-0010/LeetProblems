@@ -1,19 +1,7 @@
 class Solution {
     public void nextPermutation(int[] nums) {
-        // int cnt = 0;
         int n = nums.length;
-        
-//         for (int i=1;i<n;i++) {
-//             if (nums[i-1] >= nums[i]) {
-//                 cnt++;
-//             }
-//         }
-        
-//         // Check if all the elements are in descending order.
-//         if (cnt == nums.length -1) {
-//             Arrays.sort(nums);
-//             return;
-//         }
+
         
         // Determine the first element from the right which is less than the next element.
         int idx1 = -1;
