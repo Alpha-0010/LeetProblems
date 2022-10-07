@@ -5,10 +5,8 @@ class Solution {
         
         for (int num : nums) {
             maxEndingHere += num;
-            if (maxEndingHere < num) {
-                maxEndingHere = num;
-            }
-            maxSoFar = Math.max(maxSoFar,maxEndingHere);
+            maxEndingHere = maxEndingHere < num ? num : maxEndingHere;
+            maxSoFar = Math.max(maxEndingHere,maxSoFar);
         }
         
         return maxSoFar;
