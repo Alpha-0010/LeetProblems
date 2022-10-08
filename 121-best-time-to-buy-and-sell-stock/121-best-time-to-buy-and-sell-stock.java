@@ -3,14 +3,16 @@ class Solution {
         // The point of interest are peaks and valleys...
         int peak = prices[0];
         int valley = prices[0];
-        int maxProfit = 0;
-        for(int i=0;i<prices.length;i++) {
-            if (prices[i]<valley) {
-                valley = prices[i];
+        int profit = 0;
+        
+        for (int price : prices) {
+            if (price < valley) {
+                valley = price;
             }else {
-                maxProfit = Math.max(maxProfit,prices[i]-valley);
+                profit = Math.max(profit,price - valley);
             }
         }
-        return maxProfit;
+        
+        return profit;
     }
 }
